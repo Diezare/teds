@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TedsWoodworking - 16,000 Woodworking Plans & Projects</title>
+    <meta name="description" content="Independent affiliate review page. Explore 16,000+ woodworking plans with step-by-step guidance, blueprints, and materials lists. Check the offer page for current pricing, bonuses and guarantee details.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary-color: #b45309;
+            --primary-dark: #92400e;
+            --primary-light: #d97706;
+            --text-dark: #111827;
+            --text-light: #6b7280;
+            --bg-light: #f9fafb;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --success-color: #16a34a;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-white);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 1rem; }
+
+        /* Compliance / Disclosure Bar */
+        .disclaimer-bar {
+            background: #111827;
+            color: #e5e7eb;
+            font-size: 0.85rem;
+            padding: 0.75rem 0;
+        }
+        .disclaimer-bar a { color: #fff; text-decoration: underline; }
+        .disclaimer-bar strong { color: #fff; }
+
+        .disclaimer-bar .container {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Navigation */
+		nav{
+		  position: fixed;
+		  top: 0; left: 0; right: 0;
+		  z-index: 1000;
+		  transition: all 0.3s ease;
+
+		  background: #ffffff;      /* branco sólido */
+		  backdrop-filter: none;     /* remove o blur */
+		}
+
+		nav.scrolled{
+		  background: #ffffff;       /* continua branco ao rolar */
+		  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+		}
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .nav-brand { display: flex; align-items: center; gap: 0.75rem; }
+        .nav-logo {
+            width: 40px; height: 40px;
+            background: var(--primary-color);
+            border-radius: 0.5rem;
+            display: flex; align-items: center; justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.125rem;
+        }
+        .nav-brand h1 { font-size: 1.25rem; font-weight: 700; }
+        .nav-brand p { font-size: 0.75rem; color: var(--text-light); }
+
+        .nav-cta {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .nav-cta:hover { background: var(--primary-dark); }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #fef3c7;
+            color: #b45309;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-subtitle strong { color: var(--primary-color); font-weight: 600; }
+
+        .hero-benefits {
+            margin: 2rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .benefit-item { display: flex; align-items: flex-start; gap: 0.75rem; }
+        .benefit-icon {
+            color: var(--success-color);
+            font-weight: bold;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+        .benefit-text { color: var(--text-dark); font-weight: 500; }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0 0.75rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            font-size: 1.125rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary { background: var(--primary-color); color: white; }
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(180, 83, 9, 0.2);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--border-color);
+            color: var(--text-dark);
+            background: transparent;
+        }
+        .btn-secondary:hover { border-color: var(--text-dark); }
+
+        /* short line under main CTA */
+        .cta-microcopy {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .stat { text-align: left; }
+        .stat-number { font-size: 1.875rem; font-weight: 700; color: var(--text-dark); }
+        .stat-label { font-size: 0.875rem; color: var(--text-light); }
+
+        .hero-image { position: relative; }
+        .hero-image img {
+            width: 100%;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Informational callout card (replaces testimonials to avoid fictitious reviews) */
+        .info-card {
+            position: absolute;
+            bottom: -1.5rem;
+            right: -1.5rem;
+            background: white;
+            padding: 1.25rem 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 360px;
+            border: 1px solid var(--border-color);
+        }
+        .info-card h4 { font-size: 1rem; margin-bottom: 0.35rem; }
+        .info-card p { font-size: 0.9rem; color: var(--text-light); line-height: 1.6; }
+        .info-card a { color: var(--primary-color); text-decoration: underline; font-weight: 600; }
+
+        /* Sections */
+        .section { padding: 5rem 0; }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.125rem;
+            max-width: 760px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); }
+        .feature-icon { font-size: 2.25rem; margin-bottom: 1rem; }
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+        .feature-card p { color: var(--text-light); line-height: 1.6; }
+
+        /* Projects */
+        .projects-section { background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%); }
+        .showcase-image {
+            width: 100%;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Blueprint Section */
+        .blueprint-section { background: white; }
+        .blueprint-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        .blueprint-image {
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .blueprint-image img { width: 100%; height: auto; }
+
+        .blueprint-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--text-dark);
+        }
+        .blueprint-content p {
+            color: var(--text-light);
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        .blueprint-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .blueprint-feature { display: flex; gap: 1rem; }
+        .blueprint-feature-icon {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+        .blueprint-feature h4 {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+        }
+        .blueprint-feature p { color: var(--text-light); font-size: 0.95rem; margin: 0; }
+
+        /* Who section */
+        .who-section { background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%); }
+        .who-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .who-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .who-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .who-emoji { font-size: 3rem; margin-bottom: 1rem; }
+        .who-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+        .who-card p { color: var(--text-light); line-height: 1.6; }
+
+        /* Original content section */
+        .guide-section { background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%); }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .guide-card {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .guide-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .guide-card p { color: var(--text-light); margin-bottom: 1rem; }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-top: 1rem;
+        }
+        .step {
+            display: flex;
+            gap: 0.9rem;
+            align-items: flex-start;
+        }
+        .step .num {
+            width: 30px;
+            height: 30px;
+            border-radius: 0.6rem;
+            background: #fff7ed;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            border: 1px solid #fed7aa;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        .step h4 { font-size: 1rem; margin-bottom: 0.15rem; }
+        .step p { margin: 0; color: var(--text-light); font-size: 0.95rem; }
+
+        .checklist {
+            list-style: none;
+            display: grid;
+            gap: 0.6rem;
+            margin-top: 0.75rem;
+        }
+        .checklist li {
+            display: flex;
+            gap: 0.6rem;
+            align-items: flex-start;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        .checklist li span {
+            color: var(--success-color);
+            font-weight: 900;
+            margin-top: 0.1rem;
+        }
+        .small-note { font-size: 0.9rem; color: var(--text-light); margin-top: 0.75rem; }
+
+        /* FAQ */
+        .faq-section { background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%); }
+        .faq-container { max-width: 900px; margin: 0 auto; }
+        .faq-item {
+            background: white;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            color: var(--text-dark);
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+        .faq-question:hover { background: var(--bg-light); }
+        .faq-toggle { transition: transform 0.3s ease; font-size: 1.5rem; }
+        .faq-toggle.active { transform: rotate(180deg); }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--bg-light);
+        }
+        .faq-answer.active { max-height: 900px; }
+        .faq-answer p { padding: 0 1.5rem 1.5rem; color: var(--text-light); line-height: 1.8; }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+        .final-cta p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .btn-white {
+            background: white;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-white:hover { background: #f3f4f6; transform: translateY(-2px); }
+        .btn-outline {
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            padding: 0.875rem 1.875rem;
+            border-radius: 0.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-outline:hover { background: rgba(255, 255, 255, 0.1); }
+
+        .final-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .final-stat { text-align: center; }
+        .final-stat-number { font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .final-stat-label { font-size: 0.875rem; opacity: 0.9; }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: #9ca3af;
+            padding: 3rem 0 1rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h4 { color: white; font-weight: 700; margin-bottom: 1rem; }
+        .footer-section p { font-size: 0.875rem; line-height: 1.6; }
+        .footer-section ul { list-style: none; }
+        .footer-section li { margin-bottom: 0.5rem; }
+        .footer-section a { color: #9ca3af; text-decoration: none; transition: color 0.3s ease; }
+        .footer-section a:hover { color: white; }
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        /* Modal */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem;
+            z-index: 2000;
+        }
+        .modal-backdrop.active { display: flex; }
+
+        .modal {
+            width: 100%;
+            max-width: 860px;
+            background: #fff;
+            border-radius: 1rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+            overflow: hidden;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+        }
+        .modal-header h3 { font-size: 1.15rem; }
+        .modal-close {
+            border: 1px solid var(--border-color);
+            background: #fff;
+            border-radius: 0.6rem;
+            padding: 0.4rem 0.65rem;
+            cursor: pointer;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+        .modal-close:hover { background: var(--bg-light); }
+
+        .modal-body {
+            padding: 1.25rem 1.5rem 1.5rem;
+            max-height: 70vh;
+            overflow: auto;
+            color: var(--text-dark);
+        }
+        .modal-body h4 { margin-top: 1rem; margin-bottom: 0.35rem; }
+        .modal-body p, .modal-body li { color: var(--text-light); line-height: 1.75; }
+        .modal-body ul { margin-left: 1.25rem; margin-top: 0.5rem; }
+        .modal-body .muted { color: var(--text-light); font-size: 0.92rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero .container { grid-template-columns: 1fr; }
+            .hero-content h2 { font-size: 2.25rem; }
+            .blueprint-grid { grid-template-columns: 1fr; }
+            .hero-stats { grid-template-columns: 1fr; }
+            .final-cta h2 { font-size: 2rem; }
+            .cta-buttons { flex-direction: column; }
+            .btn, .btn-white, .btn-outline { width: 100%; }
+            .info-card { position: static; margin-top: 1.5rem; max-width: 100%; }
+            .guide-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Disclosure bar (top) -->
+    <div class="disclaimer-bar">
+        <div class="container">
+            <div>
+                <strong>Affiliate Disclosure:</strong>
+                This page contains affiliate links. We may earn a commission if you purchase through our links.
+                We are not the product owner and do not provide customer support.
+            </div>
+            <div style="display:flex;gap:.75rem;align-items:center;">
+                <a href="#about" data-open-modal="about">About</a>
+                <a href="#terms" data-open-modal="terms">Terms</a>
+                <a href="#privacy" data-open-modal="privacy">Privacy</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="nav-logo">TW</div>
+                <div>
+                    <h1>TedsWoodworking</h1>
+                    <p>16,000+ Plans</p>
+                </div>
+            </div>
+            <a href="https://21f52byb38sb8x0or64ms-2l0y.hop.clickbank.net/?&traffic_source=google_ads&traffic_type=Search&campaign=us_nonbrand_woodplans_v1&creative=rsa_a&ad=adg_beginner_plans"
+               target="_blank" rel="nofollow noopener" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">✓ Independent affiliate review</div>
+                <h2>Build Your Dream Projects</h2>
+                <p class="hero-subtitle">
+                    Explore a large collection of <strong>16,000+ detailed woodworking plans</strong>. From beginner-friendly crafts to advanced furniture—with blueprints, measurements, and materials lists.
+                    <strong>(Confirm current contents on the offer page.)</strong>
+                </p>
+
+                <div class="hero-benefits">
+                    <div class="benefit-item"><span class="benefit-icon">✓</span><span class="benefit-text">Blueprint-style plans with measurements</span></div>
+                    <div class="benefit-item"><span class="benefit-icon">✓</span><span class="benefit-text">Step-by-step guidance (see offer page for current formats)</span></div>
+                    <div class="benefit-item"><span class="benefit-icon">✓</span><span class="benefit-text">Instant digital access after purchase</span></div>
+                    <div class="benefit-item"><span class="benefit-icon">✓</span><span class="benefit-text">Designed for beginners and experienced builders</span></div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="https://21f52byb38sb8x0or64ms-2l0y.hop.clickbank.net/?&traffic_source=google_ads&traffic_type=Search&campaign=us_nonbrand_woodplans_v1&creative=rsa_a&ad=adg_beginner_plans"
+                       target="_blank" rel="nofollow noopener" class="btn btn-primary">View Offer Details</a>
+                    <button class="btn btn-secondary" onclick="document.getElementById('included').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+                </div>
+
+                <!-- requested line under main CTA -->
+                <div class="cta-microcopy">
+                    Affiliate link. Not the official website. Offer details on the vendor page.
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">16,000+</div>
+                        <div class="stat-label">Plans & Projects (as advertised)</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">Check</div>
+                        <div class="stat-label">Guarantee on offer page</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">Check</div>
+                        <div class="stat-label">Current price on offer page</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <img src="imgs/img_01.webp" alt="Woodworking projects showcase" class="showcase-image">
+                <div class="info-card" aria-label="Transparency note">
+                    <h4>Transparency note</h4>
+                    <p>
+                        This is <strong>not</strong> the official product website. For the most up-to-date pricing, bonuses, delivery method, and guarantee terms,
+                        please review the official offer page before purchasing.
+                    </p>
+                    <p class="small-note">
+                        <a href="#about" data-open-modal="about">About</a> ·
+                        <a href="#terms" data-open-modal="terms">Terms</a> ·
+                        <a href="#privacy" data-open-modal="privacy">Privacy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Included Section -->
+    <section class="section" id="included">
+        <div class="container">
+            <h3 class="section-title">What You Get</h3>
+            <p class="section-subtitle">
+                A quick overview of what the offer typically includes—please confirm the exact contents, formats, and policies on the official offer page.
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📐</div>
+                    <h3>16,000+ Complete Plans</h3>
+                    <p>From simple crafts to complex furniture—with blueprints and measurements (as advertised).</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📋</div>
+                    <h3>Materials & Cut Lists</h3>
+                    <p>Guidance to help reduce waste and plan your builds more efficiently.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🧭</div>
+                    <h3>Guided Instructions</h3>
+                    <p>Structured steps—check the offer page for current formats (PDF/video/other).</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h3>Tool Recommendations</h3>
+                    <p>General guidance on tools and materials needed for common projects.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📥</div>
+                    <h3>Digital Access</h3>
+                    <p>Access the materials after purchase (delivery method depends on the offer page).</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎁</div>
+                    <h3>Updates / Bonuses</h3>
+                    <p>If bonuses or updates are offered, they will be listed on the offer page.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Original Content Section (strengthens page value) -->
+    <section class="section guide-section" id="how-to-choose">
+        <div class="container">
+            <h3 class="section-title">How to Pick the Right Project (So You Finish It)</h3>
+            <p class="section-subtitle">
+                This section is original guidance to help you choose a plan that matches your tools, time, and space—especially if you're a beginner.
+            </p>
+
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <h3>7-step selection method</h3>
+                    <p>Before you download any plan, run through these quick checks. It reduces mistakes, wasted wood, and half-finished projects.</p>
+
+                    <div class="steps">
+                        <div class="step">
+                            <div class="num">1</div>
+                            <div>
+                                <h4>Define the finish goal</h4>
+                                <p>Is this for learning (practice), home use, or something that must look “furniture-grade”?</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="num">2</div>
+                            <div>
+                                <h4>Measure your workspace</h4>
+                                <p>Plan around your real space: cutting area, assembly area, and where you’ll clamp/glue.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="num">3</div>
+                            <div>
+                                <h4>Choose the simplest joinery you can accept</h4>
+                                <p>Start with butt joints, pocket holes, or basic dados—save advanced joinery for later builds.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="num">4</div>
+                            <div>
+                                <h4>Match the plan to your tools</h4>
+                                <p>If you don’t have a table saw, pick a plan that can be done with a circular saw + guide (or pre-cut lumber).</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="num">5</div>
+                            <div>
+                                <h4>Estimate time realistically</h4>
+                                <p>Add buffer: cutting (1x), sanding (2x), finishing (2–3 coats). Beginners always underestimate finishing.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="num">6</div>
+                            <div>
+                                <h4>Check materials before you buy</h4>
+                                <p>Prefer common species and standard dimensions for your first builds. It’s cheaper and easier to replace mistakes.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="num">7</div>
+                            <div>
+                                <h4>Start with a “confidence build”</h4>
+                                <p>Pick a small project to validate your measuring/cutting workflow, then scale up.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-card">
+                    <h3>Beginner tool checklist</h3>
+                    <p>Many starter projects can be done with a small set of tools. Requirements vary by project, but this is a practical baseline.</p>
+
+                    <ul class="checklist">
+                        <li><span>✓</span> Tape measure + square</li>
+                        <li><span>✓</span> Pencil + marking knife (optional)</li>
+                        <li><span>✓</span> Drill/driver + bits</li>
+                        <li><span>✓</span> Circular saw or miter saw (one is enough to start)</li>
+                        <li><span>✓</span> Clamps (at least 2–4)</li>
+                        <li><span>✓</span> Sanding setup (block or sander)</li>
+                        <li><span>✓</span> Safety gear (eye/ear/dust)</li>
+                    </ul>
+
+                    <p class="small-note">
+                        Tip: If you’re missing a tool, choose a plan that offers an alternative method (e.g., pre-cut lumber, straight-edge guides, or simplified joinery).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Showcase -->
+    <section class="section projects-section" id="projects">
+        <div class="container">
+            <h3 class="section-title">Sample Projects</h3>
+            <p class="section-subtitle">Examples to help you decide if the style fits what you want to build.</p>
+
+            <img src="imgs/img_02.webp" alt="Sample woodworking projects" class="showcase-image">
+        </div>
+    </section>
+
+    <!-- Blueprint Section -->
+    <section class="section blueprint-section">
+        <div class="container">
+            <div class="blueprint-grid">
+                <div class="blueprint-image">
+                    <img src="imgs/img_03.webp" alt="Example of woodworking blueprint-style plan" class="showcase-image">
+                </div>
+
+                <div class="blueprint-content">
+                    <h3>Plan-First Building</h3>
+                    <p>
+                        Good plans reduce guesswork. This offer is positioned around detailed diagrams, measurements, and structured build steps.
+                        Confirm exact inclusions on the offer page.
+                    </p>
+
+                    <div class="blueprint-features">
+                        <div class="blueprint-feature">
+                            <div class="blueprint-feature-icon">⚡</div>
+                            <div>
+                                <h4>Blueprint-style diagrams</h4>
+                                <p>Clear views and measurements to help you plan before cutting.</p>
+                            </div>
+                        </div>
+
+                        <div class="blueprint-feature">
+                            <div class="blueprint-feature-icon">⚡</div>
+                            <div>
+                                <h4>Materials guidance</h4>
+                                <p>Helpful lists and notes to plan purchases and reduce waste.</p>
+                            </div>
+                        </div>
+
+                        <div class="blueprint-feature">
+                            <div class="blueprint-feature-icon">⚡</div>
+                            <div>
+                                <h4>Build flow</h4>
+                                <p>Structured steps that reduce mistakes and rework.</p>
+                            </div>
+                        </div>
+
+                        <div class="blueprint-feature">
+                            <div class="blueprint-feature-icon">⚡</div>
+                            <div>
+                                <h4>Tools overview</h4>
+                                <p>General tool expectations for different project types.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For Section -->
+    <section class="section who-section">
+        <div class="container">
+            <h3 class="section-title">Perfect For...</h3>
+            <p class="section-subtitle">
+                Choose projects that match your skill level, tools, and workspace—plans are designed to reduce guesswork with clear steps and measurements.
+            </p>
+
+            <div class="who-grid">
+                <div class="who-card">
+                    <div class="who-emoji">🌱</div>
+                    <h3>Complete Beginners</h3>
+                    <p>Start with smaller builds to learn measuring, cutting, and finishing—then move up to larger furniture projects.</p>
+                </div>
+
+                <div class="who-card">
+                    <div class="who-emoji">🧰</div>
+                    <h3>Small Shops & Basic Tools</h3>
+                    <p>Many projects can be done with common tools. Pick a plan that matches the tools you already own.</p>
+                </div>
+
+                <div class="who-card">
+                    <div class="who-emoji">🏠</div>
+                    <h3>DIY Home Projects</h3>
+                    <p>Build practical pieces for your home with clear cut lists and structured steps that reduce errors.</p>
+                </div>
+
+                <div class="who-card">
+                    <div class="who-emoji">🎯</div>
+                    <h3>Experienced Builders</h3>
+                    <p>Use the library for inspiration, variety, and planning help—then adapt builds to your preferred methods.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <h3 class="section-title">Frequently Asked Questions</h3>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What exactly do I get after I purchase?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You’ll receive digital access to the product materials (the delivery format can vary—downloads, member area, video, etc.). Please confirm the current delivery method and inclusions on the official offer page at checkout.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Are the plans suitable for beginners?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Many projects are beginner-friendly when you choose the right build for your tools and time. Use the “How to Pick the Right Project” section above to avoid starting with something too advanced.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Do plans include measurements, diagrams, and cut lists?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The offer is marketed as including blueprint-style plans and planning aids like materials/cut references. The exact contents can vary by project, so confirm what’s included on the official offer page.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Do I need expensive tools?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Not always. Many builds can be done with basic tools. Requirements vary by project, so start with simple builds that match your current tool set, then scale up over time.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How long do I have access?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Access terms can change. Please confirm the current access policy on the official offer page before purchasing.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is there a refund policy or guarantee?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Guarantee terms can change. Confirm the current refund window and policy on the official offer page before purchasing.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can I sell items I build using these plans?</span>
+                        <span class="faq-toggle">▼</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Policies can vary. If you plan to sell items you build, review the vendor’s terms and your local regulations. Confirm current terms on the official offer page.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to See the Full Offer?</h2>
+            <p>Click through to confirm current pricing, bonuses, delivery method, and guarantee terms on the official offer page.</p>
+
+            <div class="cta-buttons">
+                <a href="https://21f52byb38sb8x0or64ms-2l0y.hop.clickbank.net/?&traffic_source=google_ads&traffic_type=Search&campaign=us_nonbrand_woodplans_v1&creative=rsa_a&ad=adg_beginner_plans"
+                   target="_blank" rel="nofollow noopener" class="btn-white">View Offer Details</a>
+                <button class="btn-outline" onclick="document.getElementById('included').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+            </div>
+
+            <div class="final-stats">
+                <div class="final-stat">
+                    <div class="final-stat-number">Check</div>
+                    <div class="final-stat-label">Guarantee details</div>
+                </div>
+                <div class="final-stat">
+                    <div class="final-stat-number">Check</div>
+                    <div class="final-stat-label">Current pricing</div>
+                </div>
+                <div class="final-stat">
+                    <div class="final-stat-number">Digital</div>
+                    <div class="final-stat-label">Access after purchase</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>TedsWoodworking</h4>
+                    <p>Independent affiliate review page. Not the official site. Please see the offer page for the most current product details.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#included">What's Included</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#about" data-open-modal="about">About</a></li>
+                        <li><a href="#terms" data-open-modal="terms">Terms</a></li>
+                        <li><a href="#privacy" data-open-modal="privacy">Privacy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Affiliate Disclosure</h4>
+                    <p>This is an affiliate page. We may earn a commission from purchases made through our links. We are not the product owner and do not provide customer support.</p>
+                    <p class="muted" style="margin-top:.75rem;">
+                        <a href="#about" data-open-modal="about" style="color:#e5e7eb;text-decoration:underline;">About</a> ·
+                        <a href="#terms" data-open-modal="terms" style="color:#e5e7eb;text-decoration:underline;">Terms</a> ·
+                        <a href="#privacy" data-open-modal="privacy" style="color:#e5e7eb;text-decoration:underline;">Privacy</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Independent Affiliate Review. | Affiliate Disclosure: We may earn a commission from purchases made through our links. | TedsWoodworking is a trademark of its respective owner.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ABOUT MODAL -->
+    <div class="modal-backdrop" id="modal-about" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="aboutTitle">About / Who We Are</h3>
+                <button class="modal-close" data-close-modal aria-label="Close">×</button>
+            </div>
+            <div class="modal-body">
+                <p class="muted"><strong>Effective date:</strong> 2026-02-14</p>
+
+                <h4>What this site is</h4>
+                <p>
+                    This website is an independent informational page designed to help visitors understand what the offer is and how to evaluate whether it fits their needs.
+                    We are <strong>not</strong> the official product website.
+                </p>
+
+                <h4>How we operate</h4>
+                <ul>
+                    <li><strong>Operated by:</strong> YourBrand (update this to your site/brand name)</li>
+                    <li><strong>Business model:</strong> Affiliate marketing (we may earn a commission if you purchase through our links)</li>
+                    <li><strong>Support:</strong> We do not provide product support, refunds, billing help, or account access</li>
+                </ul>
+
+                <h4>Transparency</h4>
+                <p>
+                    Product features, pricing, bonuses, access terms, and guarantees may change. Always confirm details on the official vendor/offer page before purchasing.
+                </p>
+
+                <h4>Safety note</h4>
+                <p>
+                    Woodworking involves tools and materials that can be hazardous. Use appropriate personal protective equipment and follow tool safety guidelines.
+                </p>
+
+                <h4>Need help with a purchase?</h4>
+                <p>
+                    For refunds, access, billing, or official support, please use the vendor’s support options shown on the official offer/checkout page.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TERMS MODAL -->
+    <div class="modal-backdrop" id="modal-terms" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="termsTitle">Terms of Use</h3>
+                <button class="modal-close" data-close-modal aria-label="Close">×</button>
+            </div>
+            <div class="modal-body">
+                <p class="muted"><strong>Effective date:</strong> 2026-02-14</p>
+
+                <h4>1) Overview</h4>
+                <p>
+                    This website is an independent affiliate review page. It is not the official product website.
+                    We may earn a commission if you purchase through links on this page. We are not the product owner and do not provide customer support.
+                </p>
+
+                <h4>2) No Professional Advice</h4>
+                <p>
+                    Content on this site is provided for informational purposes only. It does not constitute professional advice (including legal, financial, or safety advice).
+                    Always use appropriate safety precautions when working with tools and materials.
+                </p>
+
+                <h4>3) Affiliate Links</h4>
+                <p>
+                    Some links on this page are affiliate links. If you click an affiliate link and make a purchase, we may receive a commission at no additional cost to you.
+                </p>
+
+                <h4>4) Accuracy & Offer Details</h4>
+                <p>
+                    Product features, pricing, bonuses, delivery methods, and guarantee terms may change at any time.
+                    Please confirm all details on the official offer page before purchasing.
+                </p>
+
+                <h4>5) External Websites</h4>
+                <p>
+                    This site may link to external websites that are not operated by us. We are not responsible for the content, policies, or practices of third-party sites.
+                    Your interactions with third-party sites are governed by their own terms and privacy policies.
+                </p>
+
+                <h4>6) Intellectual Property</h4>
+                <p>
+                    All trademarks, product names, and logos are the property of their respective owners. This site may reference trademarks strictly for identification and informational purposes.
+                </p>
+
+                <h4>7) Limitation of Liability</h4>
+                <p>
+                    To the fullest extent permitted by law, we disclaim liability for any direct or indirect damages arising from the use of this site, reliance on its content,
+                    or purchases made through links on this site.
+                </p>
+
+                <h4>8) Changes to These Terms</h4>
+                <p>
+                    We may update these Terms from time to time. The updated version will be posted on this page with a revised effective date.
+                </p>
+
+                <h4>9) Contact</h4>
+                <p>
+                    This site does not provide direct customer support for the product. For refunds, access, billing, or product support, please refer to the official offer page and vendor support options.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRIVACY MODAL -->
+    <div class="modal-backdrop" id="modal-privacy" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="privacyTitle">Privacy Policy</h3>
+                <button class="modal-close" data-close-modal aria-label="Close">×</button>
+            </div>
+            <div class="modal-body">
+                <p class="muted"><strong>Effective date:</strong> 2026-02-14</p>
+
+                <h4>1) Summary</h4>
+                <p>
+                    This policy explains what information this site may collect and how it may be used. This site is an independent affiliate review page and is not the official product website.
+                </p>
+
+                <h4>2) Information We May Collect</h4>
+                <ul>
+                    <li><strong>Basic usage data:</strong> pages viewed, approximate location (country/region), browser/device information (typical server logs).</li>
+                    <li><strong>Affiliate link interactions:</strong> when you click an affiliate link, the affiliate network or vendor may set tracking cookies or parameters to attribute the referral.</li>
+                </ul>
+
+                <h4>3) Cookies & Tracking</h4>
+                <p>
+                    This site may use cookies or similar technologies for basic functionality and analytics (if enabled), and affiliate networks may use tracking technologies to attribute sales.
+                    You can control cookies through your browser settings. Blocking cookies may affect functionality and attribution.
+                </p>
+
+                <h4>4) Third-Party Services</h4>
+                <p>
+                    When you click an affiliate link, you may be redirected to third-party websites (affiliate networks or the vendor).
+                    Those third parties may collect information according to their own privacy policies. We do not control third-party data practices.
+                </p>
+
+                <h4>5) How We Use Information</h4>
+                <ul>
+                    <li>To operate and secure this website (fraud prevention, troubleshooting).</li>
+                    <li>To understand general traffic patterns and improve content (if analytics are used).</li>
+                    <li>To track referrals and commissions via affiliate link attribution.</li>
+                </ul>
+
+                <h4>6) Data Sharing</h4>
+                <p>
+                    We do not sell personal information. Information may be shared with service providers that help operate this site (e.g., hosting),
+                    and with affiliate networks/vendors for referral tracking when you click affiliate links.
+                </p>
+
+                <h4>7) Data Retention</h4>
+                <p>
+                    Server logs and related operational data may be retained for a limited time for security and troubleshooting, then deleted or anonymized.
+                </p>
+
+                <h4>8) Your Choices</h4>
+                <ul>
+                    <li>You can disable cookies in your browser settings.</li>
+                    <li>You can choose not to click affiliate links.</li>
+                </ul>
+
+                <h4>9) Updates</h4>
+                <p>
+                    We may update this Privacy Policy from time to time. The updated version will be posted here with a revised effective date.
+                </p>
+
+                <h4>10) Customer Support</h4>
+                <p>
+                    This site does not provide customer support for the product. For access, billing, refunds, or product support, please refer to the official offer page and vendor support options.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) navbar.classList.add('scrolled');
+            else navbar.classList.remove('scrolled');
+        });
+
+        // FAQ Toggle
+        function toggleFAQ(button) {
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const toggle = button.querySelector('.faq-toggle');
+
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem) {
+                    item.querySelector('.faq-answer').classList.remove('active');
+                    item.querySelector('.faq-toggle').classList.remove('active');
+                }
+            });
+
+            answer.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        // Smooth scroll for anchor links (excluding modal links)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                const isModalLink = this.hasAttribute('data-open-modal');
+                if (!isModalLink && href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Modal controls
+        function openModal(which) {
+            const modal = document.getElementById(`modal-${which}`);
+            if (!modal) return;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            window.location.hash = which; // #about / #terms / #privacy
+        }
+
+        function closeModal() {
+            document.querySelectorAll('.modal-backdrop.active').forEach(m => m.classList.remove('active'));
+            document.body.style.overflow = '';
+            if (location.hash === '#about' || location.hash === '#terms' || location.hash === '#privacy') {
+                history.replaceState(null, '', location.pathname + location.search);
+            }
+        }
+
+        // Open modal via links
+        document.querySelectorAll('[data-open-modal]').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(el.getAttribute('data-open-modal'));
+            });
+        });
+
+        // Close modal via buttons
+        document.querySelectorAll('[data-close-modal]').forEach(btn => {
+            btn.addEventListener('click', closeModal);
+        });
+
+        // Close modal on backdrop click
+        document.querySelectorAll('.modal-backdrop').forEach(backdrop => {
+            backdrop.addEventListener('click', (e) => {
+                if (e.target === backdrop) closeModal();
+            });
+        });
+
+        // Close modal on ESC
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Open modal if user lands on #about/#terms/#privacy
+        window.addEventListener('load', () => {
+            if (location.hash === '#about') openModal('about');
+            if (location.hash === '#terms') openModal('terms');
+            if (location.hash === '#privacy') openModal('privacy');
+        });
+    </script>
+
+</body>
+</html>
